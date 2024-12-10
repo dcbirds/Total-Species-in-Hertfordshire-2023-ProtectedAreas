@@ -10,7 +10,6 @@
         <link rel="stylesheet" href="css/L.Control.Layers.Tree.css">
         <link rel="stylesheet" href="css/qgis2web.css">
         <link rel="stylesheet" href="css/fontawesome-all.min.css">
-        <link rel="stylesheet" href="css/leaflet-search.css">
         <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css">
         <link rel="stylesheet" href="css/leaflet-measure.css">
         <style>
@@ -38,11 +37,10 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="js/leaflet-search.js"></script>
-        <script src="data/SpeciesperOS1kmsquare_0.js"></script>
-        <script src="data/HertfordshireBoroughs_1.js"></script>
-        <script src="data/HertfordshirePlaces_2.js"></script>
-        <script src="data/HertfordshireProtectedAreas_3.js"></script>
+        <script src="data/SpeciesperOS1kmsquare_1.js"></script>
+        <script src="data/HertfordshireBoroughs_2.js"></script>
+        <script src="data/HertfordshirePlaces_3.js"></script>
+        <script src="data/HertfordshireProtectedAreas_4.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -112,7 +110,20 @@
                 map.fitBounds(bounds_group.getBounds());
             }
         }
-        function pop_SpeciesperOS1kmsquare_0(feature, layer) {
+        map.createPane('pane_OSOpenDataStreetView_0');
+        map.getPane('pane_OSOpenDataStreetView_0').style.zIndex = 400;
+        var layer_OSOpenDataStreetView_0 = L.tileLayer('https://c.os.openstreetmap.org/sv/{z}/{x}/{y}.png', {
+            pane: 'pane_OSOpenDataStreetView_0',
+            opacity: 1.0,
+            attribution: '<a href="">OpenData StreetView Contains OS data © Crown copyright and database right 2023</a>',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 1,
+            maxNativeZoom: 18
+        });
+        layer_OSOpenDataStreetView_0;
+        map.addLayer(layer_OSOpenDataStreetView_0);
+        function pop_SpeciesperOS1kmsquare_1(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -140,113 +151,113 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_SpeciesperOS1kmsquare_0_0(feature) {
+        function style_SpeciesperOS1kmsquare_1_0(feature) {
             if (feature.properties['NUMPOINTS'] >= 0.000000 && feature.properties['NUMPOINTS'] <= 0.000000 ) {
                 return {
-                pane: 'pane_SpeciesperOS1kmsquare_0',
+                pane: 'pane_SpeciesperOS1kmsquare_1',
                 opacity: 1,
-                color: 'rgba(192,192,192,1.0)',
+                color: 'rgba(192,192,192,0.5)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,255,255,1.0)',
+                fillColor: 'rgba(255,255,255,0.5)',
                 interactive: true,
             }
             }
             if (feature.properties['NUMPOINTS'] >= 1.000000 && feature.properties['NUMPOINTS'] <= 19.000000 ) {
                 return {
-                pane: 'pane_SpeciesperOS1kmsquare_0',
+                pane: 'pane_SpeciesperOS1kmsquare_1',
                 opacity: 1,
-                color: 'rgba(192,192,192,1.0)',
+                color: 'rgba(192,192,192,0.5)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(213,239,207,1.0)',
+                fillColor: 'rgba(213,239,207,0.5)',
                 interactive: true,
             }
             }
             if (feature.properties['NUMPOINTS'] >= 20.000000 && feature.properties['NUMPOINTS'] <= 33.000000 ) {
                 return {
-                pane: 'pane_SpeciesperOS1kmsquare_0',
+                pane: 'pane_SpeciesperOS1kmsquare_1',
                 opacity: 1,
-                color: 'rgba(192,192,192,1.0)',
+                color: 'rgba(192,192,192,0.5)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(158,215,152,1.0)',
+                fillColor: 'rgba(158,215,152,0.5)',
                 interactive: true,
             }
             }
             if (feature.properties['NUMPOINTS'] >= 34.000000 && feature.properties['NUMPOINTS'] <= 51.000000 ) {
                 return {
-                pane: 'pane_SpeciesperOS1kmsquare_0',
+                pane: 'pane_SpeciesperOS1kmsquare_1',
                 opacity: 1,
-                color: 'rgba(192,192,192,1.0)',
+                color: 'rgba(192,192,192,0.5)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(85,181,103,1.0)',
+                fillColor: 'rgba(85,181,103,0.5)',
                 interactive: true,
             }
             }
             if (feature.properties['NUMPOINTS'] >= 52.000000 && feature.properties['NUMPOINTS'] <= 79.000000 ) {
                 return {
-                pane: 'pane_SpeciesperOS1kmsquare_0',
+                pane: 'pane_SpeciesperOS1kmsquare_1',
                 opacity: 1,
-                color: 'rgba(192,192,192,1.0)',
+                color: 'rgba(192,192,192,0.5)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(29,134,65,1.0)',
+                fillColor: 'rgba(29,134,65,0.5)',
                 interactive: true,
             }
             }
             if (feature.properties['NUMPOINTS'] >= 80.000000 && feature.properties['NUMPOINTS'] <= 142.000000 ) {
                 return {
-                pane: 'pane_SpeciesperOS1kmsquare_0',
+                pane: 'pane_SpeciesperOS1kmsquare_1',
                 opacity: 1,
-                color: 'rgba(192,192,192,1.0)',
+                color: 'rgba(192,192,192,0.5)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(0,68,27,1.0)',
+                fillColor: 'rgba(0,68,27,0.5)',
                 interactive: true,
             }
             }
         }
-        map.createPane('pane_SpeciesperOS1kmsquare_0');
-        map.getPane('pane_SpeciesperOS1kmsquare_0').style.zIndex = 400;
-        map.getPane('pane_SpeciesperOS1kmsquare_0').style['mix-blend-mode'] = 'normal';
-        var layer_SpeciesperOS1kmsquare_0 = new L.geoJson(json_SpeciesperOS1kmsquare_0, {
+        map.createPane('pane_SpeciesperOS1kmsquare_1');
+        map.getPane('pane_SpeciesperOS1kmsquare_1').style.zIndex = 401;
+        map.getPane('pane_SpeciesperOS1kmsquare_1').style['mix-blend-mode'] = 'normal';
+        var layer_SpeciesperOS1kmsquare_1 = new L.geoJson(json_SpeciesperOS1kmsquare_1, {
             attribution: '<a href="https://github.com/charlesroper/OSGB_Grids/tree/master?tab=readme-ov-file">Bird species data for 2023 derived from 283,737 records from the Herts Bird Club Database.  OS 1 km grids derived from Ordnance Survey GitHub</a>',
             interactive: true,
-            dataVar: 'json_SpeciesperOS1kmsquare_0',
-            layerName: 'layer_SpeciesperOS1kmsquare_0',
-            pane: 'pane_SpeciesperOS1kmsquare_0',
-            onEachFeature: pop_SpeciesperOS1kmsquare_0,
-            style: style_SpeciesperOS1kmsquare_0_0,
+            dataVar: 'json_SpeciesperOS1kmsquare_1',
+            layerName: 'layer_SpeciesperOS1kmsquare_1',
+            pane: 'pane_SpeciesperOS1kmsquare_1',
+            onEachFeature: pop_SpeciesperOS1kmsquare_1,
+            style: style_SpeciesperOS1kmsquare_1_0,
         });
-        bounds_group.addLayer(layer_SpeciesperOS1kmsquare_0);
-        map.addLayer(layer_SpeciesperOS1kmsquare_0);
-        function pop_HertfordshireBoroughs_1(feature, layer) {
+        bounds_group.addLayer(layer_SpeciesperOS1kmsquare_1);
+        map.addLayer(layer_SpeciesperOS1kmsquare_1);
+        function pop_HertfordshireBoroughs_2(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -266,9 +277,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_HertfordshireBoroughs_1_0() {
+        function style_HertfordshireBoroughs_2_0() {
             return {
-                pane: 'pane_HertfordshireBoroughs_1',
+                pane: 'pane_HertfordshireBoroughs_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.75)',
                 dashArray: '',
@@ -281,21 +292,21 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_HertfordshireBoroughs_1');
-        map.getPane('pane_HertfordshireBoroughs_1').style.zIndex = 401;
-        map.getPane('pane_HertfordshireBoroughs_1').style['mix-blend-mode'] = 'normal';
-        var layer_HertfordshireBoroughs_1 = new L.geoJson(json_HertfordshireBoroughs_1, {
+        map.createPane('pane_HertfordshireBoroughs_2');
+        map.getPane('pane_HertfordshireBoroughs_2').style.zIndex = 402;
+        map.getPane('pane_HertfordshireBoroughs_2').style['mix-blend-mode'] = 'normal';
+        var layer_HertfordshireBoroughs_2 = new L.geoJson(json_HertfordshireBoroughs_2, {
             attribution: '<a href="https://mapit.mysociety.org/areas/DIS.html">Hertfordshire County and District Boundaries downloaded Mapit and is Ordnance Survey data © Crown copyright and database rights; NISRA data © Crown copyright; Royal Mail data © Royal Mail copyright and database rights (Code-Point Open); National Statistics data © Crown copyright and database rights (ONSPD).</a>',
             interactive: false,
-            dataVar: 'json_HertfordshireBoroughs_1',
-            layerName: 'layer_HertfordshireBoroughs_1',
-            pane: 'pane_HertfordshireBoroughs_1',
-            onEachFeature: pop_HertfordshireBoroughs_1,
-            style: style_HertfordshireBoroughs_1_0,
+            dataVar: 'json_HertfordshireBoroughs_2',
+            layerName: 'layer_HertfordshireBoroughs_2',
+            pane: 'pane_HertfordshireBoroughs_2',
+            onEachFeature: pop_HertfordshireBoroughs_2,
+            style: style_HertfordshireBoroughs_2_0,
         });
-        bounds_group.addLayer(layer_HertfordshireBoroughs_1);
-        map.addLayer(layer_HertfordshireBoroughs_1);
-        function pop_HertfordshirePlaces_2(feature, layer) {
+        bounds_group.addLayer(layer_HertfordshireBoroughs_2);
+        map.addLayer(layer_HertfordshireBoroughs_2);
+        function pop_HertfordshirePlaces_3(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -319,9 +330,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_HertfordshirePlaces_2_0() {
+        function style_HertfordshirePlaces_3_0() {
             return {
-                pane: 'pane_HertfordshirePlaces_2',
+                pane: 'pane_HertfordshirePlaces_3',
                 radius: 3.0,
                 opacity: 1,
                 color: 'rgba(180,0,2,1.0)',
@@ -335,27 +346,27 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_HertfordshirePlaces_2');
-        map.getPane('pane_HertfordshirePlaces_2').style.zIndex = 402;
-        map.getPane('pane_HertfordshirePlaces_2').style['mix-blend-mode'] = 'normal';
-        var layer_HertfordshirePlaces_2 = new L.geoJson(json_HertfordshirePlaces_2, {
+        map.createPane('pane_HertfordshirePlaces_3');
+        map.getPane('pane_HertfordshirePlaces_3').style.zIndex = 403;
+        map.getPane('pane_HertfordshirePlaces_3').style['mix-blend-mode'] = 'normal';
+        var layer_HertfordshirePlaces_3 = new L.geoJson(json_HertfordshirePlaces_3, {
             attribution: '<a href="https://public.opendatasoft.com/explore/dataset/geonames-all-cities-with-a-population-1000/export/?disjunctive.country&refine.country=United+Kingdom">Places with a population greater than 1000 are labelled with data derived from OpenSoft. </a>',
             interactive: true,
-            dataVar: 'json_HertfordshirePlaces_2',
-            layerName: 'layer_HertfordshirePlaces_2',
-            pane: 'pane_HertfordshirePlaces_2',
-            onEachFeature: pop_HertfordshirePlaces_2,
+            dataVar: 'json_HertfordshirePlaces_3',
+            layerName: 'layer_HertfordshirePlaces_3',
+            pane: 'pane_HertfordshirePlaces_3',
+            onEachFeature: pop_HertfordshirePlaces_3,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_HertfordshirePlaces_2_0(feature));
+                return L.circleMarker(latlng, style_HertfordshirePlaces_3_0(feature));
             },
         });
-        bounds_group.addLayer(layer_HertfordshirePlaces_2);
-        map.addLayer(layer_HertfordshirePlaces_2);
-        function pop_HertfordshireProtectedAreas_3(feature, layer) {
+        bounds_group.addLayer(layer_HertfordshirePlaces_3);
+        map.addLayer(layer_HertfordshirePlaces_3);
+        function pop_HertfordshireProtectedAreas_4(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -375,9 +386,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_HertfordshireProtectedAreas_3_0() {
+        function style_HertfordshireProtectedAreas_4_0() {
             return {
-                pane: 'pane_HertfordshireProtectedAreas_3',
+                pane: 'pane_HertfordshireProtectedAreas_4',
                 opacity: 1,
                 color: 'rgba(255,127,0,1.0)',
                 dashArray: '',
@@ -390,20 +401,20 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_HertfordshireProtectedAreas_3');
-        map.getPane('pane_HertfordshireProtectedAreas_3').style.zIndex = 403;
-        map.getPane('pane_HertfordshireProtectedAreas_3').style['mix-blend-mode'] = 'normal';
-        var layer_HertfordshireProtectedAreas_3 = new L.geoJson(json_HertfordshireProtectedAreas_3, {
+        map.createPane('pane_HertfordshireProtectedAreas_4');
+        map.getPane('pane_HertfordshireProtectedAreas_4').style.zIndex = 404;
+        map.getPane('pane_HertfordshireProtectedAreas_4').style['mix-blend-mode'] = 'normal';
+        var layer_HertfordshireProtectedAreas_4 = new L.geoJson(json_HertfordshireProtectedAreas_4, {
             attribution: '<a href="https://www.protectedplanet.net/country/GBR">Protected Areas data downloaded from: UNEP-WCMC and IUCN (2024), Protected Planet: The World Database on Protected Areas (WDPA) and World Database on Other Effective Area-based Conservation Measures (WD-OECM) [Online], December 2024, Cambridge, UK: UNEP-WCMC and IUCN. Available at: www.protectedplanet.net.  This data may not be used for commercial purposes.</a>',
             interactive: false,
-            dataVar: 'json_HertfordshireProtectedAreas_3',
-            layerName: 'layer_HertfordshireProtectedAreas_3',
-            pane: 'pane_HertfordshireProtectedAreas_3',
-            onEachFeature: pop_HertfordshireProtectedAreas_3,
-            style: style_HertfordshireProtectedAreas_3_0,
+            dataVar: 'json_HertfordshireProtectedAreas_4',
+            layerName: 'layer_HertfordshireProtectedAreas_4',
+            pane: 'pane_HertfordshireProtectedAreas_4',
+            onEachFeature: pop_HertfordshireProtectedAreas_4,
+            style: style_HertfordshireProtectedAreas_4_0,
         });
-        bounds_group.addLayer(layer_HertfordshireProtectedAreas_3);
-        map.addLayer(layer_HertfordshireProtectedAreas_3);
+        bounds_group.addLayer(layer_HertfordshireProtectedAreas_4);
+        map.addLayer(layer_HertfordshireProtectedAreas_4);
         var osmGeocoder = new L.Control.Geocoder({
             collapsed: true,
             position: 'topleft',
@@ -415,10 +426,11 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var overlaysTree = [
-            {label: '<img src="legend/HertfordshireProtectedAreas_3.png" /> Hertfordshire Protected Areas', layer: layer_HertfordshireProtectedAreas_3},
-            {label: '<img src="legend/HertfordshirePlaces_2.png" /> Hertfordshire Places', layer: layer_HertfordshirePlaces_2},
-            {label: '<img src="legend/HertfordshireBoroughs_1.png" /> Hertfordshire Boroughs', layer: layer_HertfordshireBoroughs_1},
-            {label: 'Species per OS 1 km square<br /><table><tr><td style="text-align: center;"><img src="legend/SpeciesperOS1kmsquare_0_000.png" /></td><td>0 - 0</td></tr><tr><td style="text-align: center;"><img src="legend/SpeciesperOS1kmsquare_0_1191.png" /></td><td>1 - 19</td></tr><tr><td style="text-align: center;"><img src="legend/SpeciesperOS1kmsquare_0_20332.png" /></td><td>20 - 33</td></tr><tr><td style="text-align: center;"><img src="legend/SpeciesperOS1kmsquare_0_34513.png" /></td><td>34 - 51</td></tr><tr><td style="text-align: center;"><img src="legend/SpeciesperOS1kmsquare_0_52794.png" /></td><td>52 - 79</td></tr><tr><td style="text-align: center;"><img src="legend/SpeciesperOS1kmsquare_0_801425.png" /></td><td>80 - 142</td></tr></table>', layer: layer_SpeciesperOS1kmsquare_0},]
+            {label: '<img src="legend/HertfordshireProtectedAreas_4.png" /> Hertfordshire Protected Areas', layer: layer_HertfordshireProtectedAreas_4},
+            {label: '<img src="legend/HertfordshirePlaces_3.png" /> Hertfordshire Places', layer: layer_HertfordshirePlaces_3},
+            {label: '<img src="legend/HertfordshireBoroughs_2.png" /> Hertfordshire Boroughs', layer: layer_HertfordshireBoroughs_2},
+            {label: 'Species per OS 1 km square<br /><table><tr><td style="text-align: center;"><img src="legend/SpeciesperOS1kmsquare_1_000.png" /></td><td>0 - 0</td></tr><tr><td style="text-align: center;"><img src="legend/SpeciesperOS1kmsquare_1_1191.png" /></td><td>1 - 19</td></tr><tr><td style="text-align: center;"><img src="legend/SpeciesperOS1kmsquare_1_20332.png" /></td><td>20 - 33</td></tr><tr><td style="text-align: center;"><img src="legend/SpeciesperOS1kmsquare_1_34513.png" /></td><td>34 - 51</td></tr><tr><td style="text-align: center;"><img src="legend/SpeciesperOS1kmsquare_1_52794.png" /></td><td>52 - 79</td></tr><tr><td style="text-align: center;"><img src="legend/SpeciesperOS1kmsquare_1_801425.png" /></td><td>80 - 142</td></tr></table>', layer: layer_SpeciesperOS1kmsquare_1},
+            {label: "OS OpenData StreetView", layer: layer_OSOpenDataStreetView_0},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
             //selectorBack: false,
@@ -431,34 +443,27 @@
         lay.addTo(map);
         setBounds();
         var i = 0;
-        layer_HertfordshireProtectedAreas_3.eachLayer(function(layer) {
+        layer_HertfordshireProtectedAreas_4.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['NAME'] !== null?String('<div style="color: #ff7f00; font-size: 8pt; font-style: italic; font-family: \'Helvetica\', sans-serif;">' + layer.feature.properties['NAME']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_HertfordshireProtectedAreas_3'});
+            layer.bindTooltip((layer.feature.properties['NAME'] !== null?String('<div style="color: #ff7f00; font-size: 8pt; font-style: italic; font-family: \'Helvetica\', sans-serif;">' + layer.feature.properties['NAME']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_HertfordshireProtectedAreas_4'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
               addLabel(layer, i);
               i++;
         });
-        map.addControl(new L.Control.Search({
-            layer: layer_HertfordshirePlaces_2,
-            initial: false,
-            hideMarkerOnCollapse: true,
-            propertyName: 'name'}));
-        document.getElementsByClassName('search-button')[0].className +=
-         ' fa fa-binoculars';
-        resetLabels([layer_HertfordshirePlaces_2,layer_HertfordshireProtectedAreas_3]);
+        resetLabels([layer_HertfordshirePlaces_3,layer_HertfordshireProtectedAreas_4]);
         map.on("zoomend", function(){
-            resetLabels([layer_HertfordshirePlaces_2,layer_HertfordshireProtectedAreas_3]);
+            resetLabels([layer_HertfordshirePlaces_3,layer_HertfordshireProtectedAreas_4]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_HertfordshirePlaces_2,layer_HertfordshireProtectedAreas_3]);
+            resetLabels([layer_HertfordshirePlaces_3,layer_HertfordshireProtectedAreas_4]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_HertfordshirePlaces_2,layer_HertfordshireProtectedAreas_3]);
+            resetLabels([layer_HertfordshirePlaces_3,layer_HertfordshireProtectedAreas_4]);
         });
         </script>
     </body>
